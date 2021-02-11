@@ -4,11 +4,17 @@
   "description": "Testing 11ty",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "eleventy --serve --watch",
+    "build": "eleventy"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "contentful": "^8.1.7",
+    "dotenv": "^8.2.0"
   }
 }
