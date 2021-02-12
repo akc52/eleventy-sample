@@ -1,0 +1,24 @@
+---
+siteTitle: Eleventy Sample
+pageTitle: Products Page
+images:
+  - ???.jpg
+  - ….jpg
+  - tshirt.jpg
+  - purplepants.jpg
+---
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>{{ siteTitle }}</title>
+ </head>
+ <body>
+ 	<h1>{{ pageTitle }}</h1>
+  <ul>
+{% for filename in images %}
+   <li><a href="/assets/img/{{ filename | url_encode }}">{{ filename }}</a></li>
+{% endfor %}
+  </ul>
+ </body>
+</html>

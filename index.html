@@ -1,3 +1,13 @@
+---
+siteTitle: Eleventy Sample
+pageTitle: Products Page
+images:
+  - tshirt.jpg
+  - purplepants.jpg
+  - tshirt.jpg
+  - purplepants.jpg
+---
+
 <!doctype html>
 <html>
 
@@ -10,10 +20,20 @@
   <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
 <body>
+
+<!-- Contentful Attempt
     <h1>- {{ page.tagline }} -</h1>
     <ul>
         <li>{{ page }}</li>
         <li>{{ page.text }}</li>
     </ul>
+-->
+    <h1>{{ pageTitle }}</h1>
+
+    {%- for filename in images %}
+    {%- capture path %}img/{{ filename }}{% endcapture %}
+        <li><a href="img/{{ filename | url_encode }}">{{ filename }}</a> {{ path | filesize }} </li>
+    {%- endfor %}
+
 </body>
 </html>
